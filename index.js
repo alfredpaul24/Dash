@@ -1,9 +1,18 @@
-// ==================== IMPORT FIREBASE ====================
-import { db } from './firebase-config.js';
-import {
-    collection, getDocs, addDoc, setDoc, deleteDoc,
-    doc, query, orderBy, onSnapshot, updateDoc
-} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+// ========== IMPORT FIREBASE ==========
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+        import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDRjgXqYuArm4WBOe-mi8ucwbC1kQtUmXE",
+            authDomain: "n-zo-cretaion.firebaseapp.com",
+            projectId: "n-zo-cretaion",
+            storageBucket: "n-zo-cretaion.firebasestorage.app",
+            messagingSenderId: "403603077105",
+            appId: "1:403603077105:web:4f5d2201da81cea0ed7650"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
 
 // ==================== NAVIGATION ENTRE SECTIONS ====================
 document.addEventListener('DOMContentLoaded', function () {
