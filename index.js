@@ -1,7 +1,9 @@
 // ========== IMPORT FIREBASE ==========
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
-        import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
-
+        import { 
+    getFirestore, collection, getDocs, addDoc, updateDoc, 
+    deleteDoc, doc, query, orderBy, onSnapshot, setDoc 
+} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
         const firebaseConfig = {
             apiKey: "AIzaSyDRjgXqYuArm4WBOe-mi8ucwbC1kQtUmXE",
             authDomain: "n-zo-cretaion.firebaseapp.com",
