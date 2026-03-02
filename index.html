@@ -89,7 +89,7 @@
                         </div>
                         <div class="stat-info">
                             <h3>Revenus totaux</h3>
-                            <p class="stat-value" id="totalRevenue">0 €</p>
+                            <p class="stat-value" id="totalRevenue">0 FCFA</p>
                             <span class="stat-label">Chiffre d'affaires</span>
                         </div>
                     </div>
@@ -181,9 +181,7 @@
             <!-- SECTION PRODUITS -->
             <section id="products" class="admin-section">
                 <h2 class="section-title">Gestion des produits</h2>
-                
                 <button class="btn-add-product" onclick="openProductModal()">+ Ajouter un produit</button>
-
                 <div id="productsList" class="products-admin-grid">
                     <!-- Les produits seront chargés ici -->
                 </div>
@@ -192,7 +190,6 @@
             <!-- SECTION CONTENU -->
             <section id="content" class="admin-section">
                 <h2 class="section-title">Modifier le contenu du site</h2>
-                
                 <div class="content-editor">
                     <div class="editor-card">
                         <h3>Texte Hero (Page d'accueil)</h3>
@@ -200,7 +197,6 @@
                         <textarea id="heroSubtitle" class="textarea-field" rows="3" placeholder="Sous-titre"></textarea>
                         <button class="btn-save" onclick="saveHeroContent()">Enregistrer</button>
                     </div>
-
                     <div class="editor-card">
                         <h3>Informations de contact</h3>
                         <input type="text" id="contactAddress" class="input-field" placeholder="Adresse">
@@ -208,7 +204,6 @@
                         <input type="email" id="contactEmail" class="input-field" placeholder="Email">
                         <button class="btn-save" onclick="saveContactInfo()">Enregistrer</button>
                     </div>
-
                     <div class="editor-card">
                         <h3>Couleurs du thème</h3>
                         <div class="color-picker-group">
@@ -233,9 +228,7 @@
                 <h2>Détails de la commande</h2>
                 <button class="close-modal" onclick="closeOrderModal()">&times;</button>
             </div>
-            <div class="modal-body" id="orderModalBody">
-                <!-- Contenu dynamique -->
-            </div>
+            <div class="modal-body" id="orderModalBody"></div>
         </div>
     </div>
 
@@ -247,7 +240,8 @@
                 <button class="close-modal" onclick="closeProductModal()">&times;</button>
             </div>
             <div class="modal-body">
-                <input type="hidden" id="productId">
+                <!-- ✅ MODIFIÉ : id="productDocId" au lieu de id="productId" -->
+                <input type="hidden" id="productDocId">
                 <div class="form-group">
                     <label>Nom du produit</label>
                     <input type="text" id="productName" class="input-field">
@@ -257,11 +251,11 @@
                     <textarea id="productDescription" class="textarea-field" rows="3"></textarea>
                 </div>
                 <div class="form-group">
-                    <label>Prix (€)</label>
-                    <input type="number" id="productPrice" class="input-field" step="0.01">
+                    <label>Prix (FCFA)</label>
+                    <input type="number" id="productPrice" class="input-field" step="1">
                 </div>
                 <div class="form-group">
-                    <label>URL de l'image</label>
+                    <label>Nom de l'image (ex: IMG2.jpg)</label>
                     <input type="text" id="productImage" class="input-field">
                 </div>
                 <button class="btn-save" onclick="saveProduct()">Enregistrer</button>
@@ -269,6 +263,7 @@
         </div>
     </div>
 
-    <script src="index.js"></script>
+    <!-- ✅ MODIFIÉ : type="module" + admin.js au lieu de index.js -->
+    <script type="module" src="admin.js"></script>
 </body>
 </html>
